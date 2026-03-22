@@ -2,6 +2,8 @@
 
 This repository contains a complete, containerized observability stack for monitoring a FastAPI web application. It uses Prometheus to scrape application metrics and Grafana to visualize them in real-time.
 
+![](dashboard.gif)
+
 ## Architecture Stack
 
 * **App:** FastAPI (Python)
@@ -21,35 +23,35 @@ The included Grafana dashboard is organized into logical rows to monitor the "Go
 
 **1. High-Level Health (Stats)**
 
-Process Uptime: Time elapsed since the FastAPI service started.
+* Process Uptime: Time elapsed since the FastAPI service started.
 
-Total Requests: Cumulative count of all incoming HTTP traffic.
+* Total Requests: Cumulative count of all incoming HTTP traffic.
 
-Error Rate: Percentage of requests resulting in 4xx or 5xx status codes.
+* Error Rate: Percentage of requests resulting in 4xx or 5xx status codes.
 
-Average Duration: The mean response time across all API endpoints.
+* Average Duration: The mean response time across all API endpoints.
 
-Active Requests: Real-time count of concurrent requests currently being processed.
+* Active Requests: Real-time count of concurrent requests currently being processed.
 
 **2. Request & Traffic Analysis**
 
-API Throughput: Time-series graph of requests per second, segmented by method, path, and status.
+* API Throughput: Time-series graph of requests per second, segmented by method, path, and status.
 
-Status Code Distribution: A donut chart showing the breakdown of response types (e.g., 200 OK vs. 500 Internal Server Error).
+* Status Code Distribution: A donut chart showing the breakdown of response types (e.g., 200 OK vs. 500 Internal Server Error).
 
 **3. Performance & Latency**
 
-Latency Percentiles (p50, p90, p95, p99): Tracks "tail latency" to identify the experience of the slowest users.
+* Latency Percentiles (p50, p90, p95, p99): Tracks "tail latency" to identify the experience of the slowest users.
 
-Average Duration per Route: Monitors which specific API paths are performing slower than average over time.
+* Average Duration per Route: Monitors which specific API paths are performing slower than average over time.
 
 **4. System & Runtime Resources**
 
-CPU & Memory Usage: Monitoring of Resident and Virtual memory, along with CPU percentage.
+* CPU & Memory Usage: Monitoring of Resident and Virtual memory, along with CPU percentage.
 
-File Descriptors: Ratio of open files/sockets to the system limit to prevent saturation crashes.
+* File Descriptors: Ratio of open files/sockets to the system limit to prevent saturation crashes.
 
-Python Garbage Collection: Tracking of GC object collections across all three generations (0, 1, and 2) to monitor memory management overhead.
+* Python Garbage Collection: Tracking of GC object collections across all three generations (0, 1, and 2) to monitor memory management overhead.
 
 ## Getting Started
 
